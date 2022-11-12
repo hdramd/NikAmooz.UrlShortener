@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using NikAmooz.UrlShortener.Api.Installer;
 using NikAmooz.UrlShortener.Application;
 using NikAmooz.UrlShortener.Infrastructure;
 
@@ -22,7 +23,7 @@ namespace NikAmooz.UrlShortener.Api
         {
             services.AddApplication();
             services.AddInfrastructure(Configuration);
-            services.AddControllers();
+            services.InstallServicesAssembly(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,6 +41,12 @@ namespace NikAmooz.UrlShortener.Api
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(options =>
+            {
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "Sepid Identity API V1");
             });
         }
     }
