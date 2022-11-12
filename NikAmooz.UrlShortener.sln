@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NikAmooz.UrlShortener.Domai
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NikAmooz.UrlShortener.Application", "NikAmooz.UrlShortener.Application\NikAmooz.UrlShortener.Application.csproj", "{B2F6869B-D6C5-4E5A-BC08-C42AA510F18E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NikAmooz.UrlShortener.Infrastructure", "NikAmooz.UrlShortener.Infrastructure\NikAmooz.UrlShortener.Infrastructure.csproj", "{C008E77B-97FF-4B13-9884-DB60FD74738A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{B2F6869B-D6C5-4E5A-BC08-C42AA510F18E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2F6869B-D6C5-4E5A-BC08-C42AA510F18E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2F6869B-D6C5-4E5A-BC08-C42AA510F18E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C008E77B-97FF-4B13-9884-DB60FD74738A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C008E77B-97FF-4B13-9884-DB60FD74738A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C008E77B-97FF-4B13-9884-DB60FD74738A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C008E77B-97FF-4B13-9884-DB60FD74738A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{2FC4747A-F5FA-4D74-9B59-3E79BFF8DBF9} = {9832426D-190C-495C-AE6D-C1E084115072}
 		{B2F6869B-D6C5-4E5A-BC08-C42AA510F18E} = {9832426D-190C-495C-AE6D-C1E084115072}
+		{C008E77B-97FF-4B13-9884-DB60FD74738A} = {9832426D-190C-495C-AE6D-C1E084115072}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {56049786-1CB9-4019-9A09-762125885CE7}
