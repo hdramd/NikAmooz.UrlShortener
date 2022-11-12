@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using NikAmooz.UrlShortener.Application.Common.Behaviours;
+using System.Reflection;
 
 namespace NikAmooz.UrlShortener.Application
 {
@@ -8,6 +9,7 @@ namespace NikAmooz.UrlShortener.Application
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
+            services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(UnhandledExceptionBehaviour<,>));
 
             return services;
