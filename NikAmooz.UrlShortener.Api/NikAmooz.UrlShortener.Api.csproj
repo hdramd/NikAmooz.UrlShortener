@@ -9,4 +9,9 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.14" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\NikAmooz.UrlShortener.Application\NikAmooz.UrlShortener.Application.csproj" />
+    <ProjectReference Include="..\NikAmooz.UrlShortener.Infrastructure\NikAmooz.UrlShortener.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
