@@ -13,7 +13,9 @@ namespace NikAmooz.UrlShortener.Infrastructure.Persistence.Base
             builder.Property(x => x.Created)
                 .IsRequired();
             builder.Property(x => x.CreatedBy)
-                .IsRequired();
+                .IsRequired().HasMaxLength(100); 
+            builder.Property(x => x.LastModifiedBy)
+                .HasMaxLength(100);
             builder.Property(x => x.Deleted)
                 .IsRequired();
         }

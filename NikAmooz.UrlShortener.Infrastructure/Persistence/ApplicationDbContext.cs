@@ -11,8 +11,14 @@ namespace NikAmooz.UrlShortener.Infrastructure.Persistence
 {
     public class ApplicationDbContext : DbContext, IApplicationDbContext
     {
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) 
+            : base(options)
+        {
+            
+        }
+
         #region DbSet
-        
+
         public DbSet<ShortUrl> ShortUrls => Set<ShortUrl>(); 
 
         #endregion
