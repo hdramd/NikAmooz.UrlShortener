@@ -46,7 +46,7 @@ namespace NikAmooz.UrlShortener.Api
             app.UseSwagger();
             app.UseSwaggerUI(options =>
             {
-                options.SwaggerEndpoint("/swagger/v1/swagger.json", "Sepid Identity API V1");
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "NikAmooz Url Shortener Api");
             });
         }
     }

@@ -21,8 +21,4 @@
     <ProjectReference Include="..\NikAmooz.UrlShortener.Infrastructure\NikAmooz.UrlShortener.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>
