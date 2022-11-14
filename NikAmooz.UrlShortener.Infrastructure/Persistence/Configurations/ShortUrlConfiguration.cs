@@ -13,6 +13,12 @@ namespace NikAmooz.UrlShortener.Infrastructure.Persistence.Configurations
             builder.Property(x => x.Path)
                 .IsRequired()
                 .HasMaxLength(500);
+
+            builder.HasIndex(x => x.Path)
+                .IsUnique();
+
+            builder.Property(x => x.Destination)
+                .IsRequired();
         }
     }
 }
