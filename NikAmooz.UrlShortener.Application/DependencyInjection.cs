@@ -13,6 +13,7 @@ namespace NikAmooz.UrlShortener.Application
             services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(UnhandledExceptionBehaviour<,>));
             services.AddSingleton<IUrlShortener, Common.Services.UrlShortener>();
+            services.AddTransient<IMediator, Mediator>();
 
             return services;
         }

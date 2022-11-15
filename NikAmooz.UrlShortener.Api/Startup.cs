@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NikAmooz.UrlShortener.Api.Installer;
+using NikAmooz.UrlShortener.Api.Middlewares;
 using NikAmooz.UrlShortener.Application;
 using NikAmooz.UrlShortener.Infrastructure;
 
@@ -43,11 +44,15 @@ namespace NikAmooz.UrlShortener.Api
                 endpoints.MapControllers();
             });
 
+            app.UseMiddleware<ForwarderMiddleware>();
+
+            #region Swagger
             app.UseSwagger();
             app.UseSwaggerUI(options =>
             {
                 options.SwaggerEndpoint("/swagger/v1/swagger.json", "NikAmooz Url Shortener Api");
-            });
+            }); 
+            #endregion
         }
     }
 }
