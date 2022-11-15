@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using NikAmooz.UrlShortener.Api.Middlewares;
+using NikAmooz.UrlShortener.Application.Common.Interfaces;
 
 namespace NikAmooz.UrlShortener.Api.Installer
 {
@@ -11,7 +12,10 @@ namespace NikAmooz.UrlShortener.Api.Installer
         public void InstallServices(IConfiguration configuration, IServiceCollection services)
         {
             services.AddControllers(opt => opt.Filters.Add<OnExceptionMiddleware>())
-               .AddFluentValidation();
+                .AddFluentValidation(mvcConfiguration =>
+                {
+                    mvcConfiguration.RegisterValidatorsFromAssemblyContaining<IApplicationDbContext>();
+                });
 
             #region Swagger
 
