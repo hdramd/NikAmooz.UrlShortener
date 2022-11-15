@@ -1,12 +1,8 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
-using Microsoft.EntityFrameworkCore;
-using NikAmooz.UrlShortener.Application.Common.Interfaces;
+using NikAmooz.UrlShortener.Application.ShortUrls.Commands;
 using NikAmooz.UrlShortener.Application.ShortUrls.Queries;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace NikAmooz.UrlShortener.Api.Middlewares
@@ -31,8 +27,9 @@ namespace NikAmooz.UrlShortener.Api.Middlewares
 
             if (result.Success)
             {
+                await mediator.Send(new IncreaseVisitCountCommand { Id = result.Data.Id });
                 var response = httpContext.Response;
-                response.Redirect(result.Data?.Destination, true);
+                response.Redirect(result.Data?.Destination);
                 return;
             }
 
