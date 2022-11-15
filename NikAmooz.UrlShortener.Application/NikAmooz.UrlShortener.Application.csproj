@@ -16,8 +16,4 @@
     <ProjectReference Include="..\NikAmooz.UrlShortener.Domain\NikAmooz.UrlShortener.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ShortUrls\Queries\" />
-  </ItemGroup>
-
 </Project>

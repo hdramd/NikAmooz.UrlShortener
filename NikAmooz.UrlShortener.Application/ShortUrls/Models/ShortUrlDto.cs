@@ -4,6 +4,7 @@
     {
         public int Id { get; set; }
         public string Path { get; set; }
+        public string Destination { get; set; }
         public int Count { get; set; }
     }
 }
